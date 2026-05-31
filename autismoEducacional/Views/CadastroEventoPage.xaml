@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="autismoEducacional.Views.CadastroEventoPage"
+             Title="Cadastro de Evento"
+             BackgroundColor="#FFFFFF">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Novo Evento Educacional" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#0D47A1" HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/>
+
+            <Label Text="Nome do Evento:" 
+                   FontAttributes="Bold" 
+                   TextColor="#111111"/>
+            <Entry Text="{Binding Nome}" 
+                   Placeholder="Ex: Workshop de Inclusão no Autismo"
+                   TextColor="#000000" 
+                   PlaceholderColor="#666666" 
+                   BackgroundColor="#F0F0F0"/>
+            <Label Text="Local do Evento:" 
+                   FontAttributes="Bold" 
+                   TextColor="#111111"/>
+            <Entry Text="{Binding Local}" 
+                   Placeholder="Ex: Auditório Principal / Online"
+                   TextColor="#000000"
+                   PlaceholderColor="#666666"
+                   BackgroundColor="#F0F0F0"/>
+
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="Data de Início:" 
+                           FontAttributes="Bold" 
+                           TextColor="#111111"/>
+                    <DatePicker Date="{Binding DataInicios}" 
+                                Format="dd/MM/yyyy"
+                                TextColor="#000000"
+                                BackgroundColor="#F0F0F0"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Label Text="Data de Término:" 
+                           FontAttributes="Bold" 
+                           TextColor="#111111"/>
+                    <DatePicker Date="{Binding DataTermino}" 
+                                Format="dd/MM/yyyy"
+                                TextColor="#000000"
+                                BackgroundColor="#F0F0F0"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="10">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="Nº Participantes:" 
+                           FontAttributes="Bold" 
+                           TextColor="#111111"/>
+                    <Entry Text="{Binding NumeroParticipantes}" 
+                           Keyboard="Numeric" 
+                           Placeholder="0"
+                           TextColor="#000000"
+                           PlaceholderColor="#666666"
+                           BackgroundColor="#F0F0F0"/>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Label Text="Custo por Pessoa:" 
+                           FontAttributes="Bold" 
+                           TextColor="#111111"/>
+                    <Entry Text="{Binding CustoPorParticipante}" 
+                           Keyboard="Numeric" 
+                           Placeholder="0.00"
+                           TextColor="#000000"
+                           PlaceholderColor="#666666"
+                           BackgroundColor="#F0F0F0"/>
+                </VerticalStackLayout>
+            </Grid>
+
+            <Button Text="Gerar Resumo do Evento"
+                    Clicked="OnCalcularEAvancarClicked"
+                    BackgroundColor="#0D47A1" TextColor="#FFFFFF" FontAttributes="Bold"
+                    HeightRequest="50"
+                    Margin="0,20,0,20"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
