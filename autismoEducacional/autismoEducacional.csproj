@@ -77,6 +77,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\AgendaInclusivaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\BuscaProdutoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\CadastroEventoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

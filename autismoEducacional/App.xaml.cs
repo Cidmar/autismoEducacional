@@ -6,8 +6,7 @@
         {
             InitializeComponent();
 
-            // Certifique-se de usar "new NavigationPage(...)" aqui:
-            MainPage = new NavigationPage(new Views.CadastroEventoPage());
+            MainPage = new AppShell();
         }
     }
 }

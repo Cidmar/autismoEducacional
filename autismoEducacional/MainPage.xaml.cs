@@ -1,24 +1,27 @@
-﻿namespace autismoEducacional
+﻿namespace autismoEducacional.Views
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private async void OnCadastroEventoClicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            await Shell.Current.GoToAsync(nameof(CadastroEventoPage));
         }
+
+        private async void OnAgendaInclusivaClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(AgendaInclusivaPage));
+        }
+
+        private async void OnBuscaProdutoClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync(nameof(BuscaProdutoPage));
+        }
+
+
     }
 }

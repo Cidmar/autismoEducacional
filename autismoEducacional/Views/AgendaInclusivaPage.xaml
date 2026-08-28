@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="autismoEducacional.Views.AgendaInclusivaPage">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Agenda Inclusiva"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#2E86C1"
+               HorizontalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding Eventos}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BackgroundColor="{Binding CorDeDestaque}" Padding="10" CornerRadius="8">
+                            <StackLayout>
+                                <Label Text="{Binding Nome}" FontSize="20" FontAttributes="Bold"/>
+                                <Label Text="{Binding DescricaoCurta}" FontSize="14"/>
+                                <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}"/>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
